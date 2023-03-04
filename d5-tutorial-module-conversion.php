@@ -62,3 +62,6 @@ function dtmc_enqueue_visual_builder_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dtmc_enqueue_visual_builder_assets' );
+
+// Load Divi 5 modules.
+require_once DTMC_PATH . 'divi-5/divi-5.php';
