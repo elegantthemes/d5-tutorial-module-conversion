@@ -1,0 +1,9 @@
+{
+    "name": "dtmc/dynamic-module",
+    "d4Shortcode": "dtmc_dynamic_module",
+    "title": "DTMC Dynamic Module",
+    "titles": "DTMC Dynamic Modules",
+    "moduleIcon": "divi/module-blurb",
+    "category": "module",
+    "attributes": {}
+}

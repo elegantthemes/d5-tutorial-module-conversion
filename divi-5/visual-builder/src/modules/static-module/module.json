@@ -1,0 +1,9 @@
+{
+    "name": "dtmc/static-module",
+    "d4Shortcode": "dtmc_static_module",
+    "title": "DTMC Static Module",
+    "titles": "DTMC Static Modules",
+    "moduleIcon": "divi/module-blurb",
+    "category": "module",
+    "attributes": {}
+}
