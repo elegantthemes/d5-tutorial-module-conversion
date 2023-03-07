@@ -20,13 +20,13 @@ use DTMC\Modules\DynamicModule\DynamicModuleController;
  * @package DTMC\Modules
  */
 class RESTRegistration {
-    /**
-     * Register REST routes for modules.
-     */
-    public function register_routes() {
-        $route = new RESTRoute( 'dtmc/v1' ); // Namespace for the extension.
+	/**
+	 * Register REST routes for modules.
+	 */
+	public function register_routes() {
+		$route = new RESTRoute( 'dtmc/v1' ); // Namespace for the extension.
 
-        // Route for Dynamic Module.
-        $route->get( '/modules/dynamic-module', DynamicModuleController::class );
-    }
+		// Route for Dynamic Module.
+		$route->prefix('/module-data')->get( '/dynamic-module', DynamicModuleController::class );
+	}
 }

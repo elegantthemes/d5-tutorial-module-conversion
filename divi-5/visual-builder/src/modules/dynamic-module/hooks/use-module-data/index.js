@@ -4,7 +4,7 @@ const { loggedFetch } = divi.ajax;
 
 /**
  * Custom hook to fetch module data.
- * 
+ *
  * @return {Object} Object containing getModuleData, moduleData and isLoading.
  */
 export const useModuleData = () => {
@@ -21,7 +21,7 @@ export const useModuleData = () => {
     setLoading(true);
 
     loggedFetch({
-      restRoute: 'dtmc/v1/modules/dynamic-module',
+      restRoute: 'dtmc/v1/module-data/dynamic-module',
       method:    'GET',
       data:      {
         title,
