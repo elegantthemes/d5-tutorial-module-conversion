@@ -1,4 +1,8 @@
 <?php
+// Require php files.
+require_once DTMC_PATH . 'divi-5/vendor/autoload.php';
+require_once DTMC_PATH . 'divi-5/modules/Modules.php';
+
 /**
  * Enqueue Divi 5 Visual Builder Assets
  *
