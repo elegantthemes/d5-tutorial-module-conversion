@@ -1,4 +1,8 @@
 <?php
+// Require php files.
+require_once DTMC_PATH . 'divi-5/vendor/autoload.php';
+require_once DTMC_PATH . 'divi-5/modules/Modules.php';
+
 /**
  * Enqueue Divi 5 Visual Builder Assets
  *
@@ -9,10 +13,10 @@ function dtmc_divi5_enqueue_visual_builder_assets() {
 		wp_enqueue_script(
 			'dtmc-divi5-visual-builder',
 			DTMC_URL . 'divi-5/visual-builder/build/d5-tutorial-module-conversion.js',
-			array( 'react', 'jquery' ),
+			array( 'react', 'jquery', 'divi-module-library', 'wp-hooks', 'divi-ajax' ),
 			'1.0.0',
 			true
 		);
 	}
 }
-add_action( 'wp_enqueue_scripts', 'dtmc_divi5_enqueue_visual_builder_assets' );
+add_action( 'et_vb_assets_before_enqueue_packages', 'dtmc_divi5_enqueue_visual_builder_assets' ); // You must use this hook to enqueue your assets for the Divi 5 Visual Builder.
