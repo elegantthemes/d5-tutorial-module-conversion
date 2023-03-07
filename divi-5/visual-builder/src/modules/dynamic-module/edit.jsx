@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { ModuleStyles } from './module-styles';
 import { useModuleData } from './hooks/use-module-data';
 
 const { ModuleContainer } = divi.module; // ModuleContainer is a component that wraps the module's edit component.
@@ -26,6 +27,7 @@ export const DynamicModuleEdit = ({
       attrs={attrs}
       id={id}
       name={name}
+      stylesComponent={ModuleStyles}
     >
       <div>
         <HeaderLevel className="dtmc_dynamic_module_title">{title}</HeaderLevel>
