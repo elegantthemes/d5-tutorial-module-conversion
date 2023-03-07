@@ -5,5 +5,36 @@
     "titles": "DTMC Dynamic Modules",
     "moduleIcon": "divi/module-blurb",
     "category": "module",
-    "attributes": {}
+    "attributes": {
+        "text": {
+            "type": "object",
+            "default": {
+                "text": {
+                    "desktop": {
+                        "value": {
+                            "color": "dark"
+                        }
+                    }
+                }
+            }
+        },
+        "titleFont": {
+            "type": "object",
+            "default": {
+                "font": {
+                    "desktop": {
+                        "value": {
+                            "headingLevel": "h2"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "customCssFields": {
+        "title": {
+            "subName": "title",
+            "selectorSuffix": " .dtmc_dynamic_module_title"
+        }
+    }
 }
