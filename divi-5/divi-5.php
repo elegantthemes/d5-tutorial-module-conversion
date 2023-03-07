@@ -13,7 +13,7 @@ function dtmc_divi5_enqueue_visual_builder_assets() {
 		wp_enqueue_script(
 			'dtmc-divi5-visual-builder',
 			DTMC_URL . 'divi-5/visual-builder/build/d5-tutorial-module-conversion.js',
-			array( 'react', 'jquery', 'divi-module-library', 'wp-hooks' ),
+			array( 'react', 'jquery', 'divi-module-library', 'wp-hooks', 'divi-ajax' ),
 			'1.0.0',
 			true
 		);
