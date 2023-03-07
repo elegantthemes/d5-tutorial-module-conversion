@@ -39,14 +39,13 @@ export const ModuleStyles = ({
       attr={attrs.background}
     />
     <TextStyle
-      selector={[`${orderClass} .et_pb_promo_description`,
-      `${orderClass} .et_pb_module_header`].join(', ')}
+      selector={`${orderClass} .dtmc_static_module_content`}
       attr={attrs?.text}
       propertySelectors={{
         textShadow: {
           desktop: {
             value: {
-              'text-shadow': `${orderClass} .et_pb_promo_description`,
+              'text-shadow': `${orderClass} .dtmc_static_module_content`,
             },
           },
         },
