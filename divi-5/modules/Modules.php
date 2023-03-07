@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Register REST routes.
 add_action( 'init', function() {
-    $restApi = new RESTRegistration();
+		$restApi = new RESTRegistration();
 
-    $restApi->register_routes();
+		$restApi->register_routes();
 } );
