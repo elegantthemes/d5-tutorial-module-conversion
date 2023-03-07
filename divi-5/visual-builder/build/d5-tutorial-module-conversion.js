@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"DynamicModuleEdit\": () => (/* binding */ DynamicModuleEdit)\n/* harmony export */ });\nconst DynamicModuleEdit = () => /*#__PURE__*/React.createElement(\"div\", {\n  className: \"dynamic-module\"\n}, \"boilerplate component\");\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/modules/dynamic-module/edit.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"DynamicModuleEdit\": () => (/* binding */ DynamicModuleEdit)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hooks_use_module_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/use-module-data */ \"./visual-builder/src/modules/dynamic-module/hooks/use-module-data/index.js\");\n\n\nconst {\n  ModuleContainer\n} = divi.module; // ModuleContainer is a component that wraps the module's edit component.\n\n/**\n * Edit component for Dynamic Module.\n */\nconst DynamicModuleEdit = ({\n  attrs,\n  id,\n  name\n}) => {\n  const HeaderLevel = attrs?.titleFont?.font?.desktop?.value?.headingLevel ?? 'h2';\n  const title = attrs?.title?.desktop?.value ?? '';\n  const {\n    getModuleData,\n    moduleData,\n    isLoading\n  } = (0,_hooks_use_module_data__WEBPACK_IMPORTED_MODULE_1__.useModuleData)();\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {\n    getModuleData(title);\n  }, [title]);\n  return /*#__PURE__*/React.createElement(ModuleContainer, {\n    attrs: attrs,\n    id: id,\n    name: name\n  }, /*#__PURE__*/React.createElement(\"div\", null, /*#__PURE__*/React.createElement(HeaderLevel, {\n    className: \"dtmc_dynamic_module_title\"\n  }, title), isLoading && /*#__PURE__*/React.createElement(\"div\", null, \"Loading...\"), !isLoading && /*#__PURE__*/React.createElement(\"div\", {\n    className: \"dtmc_dynamic_module_content\",\n    dangerouslySetInnerHTML: {\n      __html: moduleData\n    }\n  })));\n};\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/modules/dynamic-module/edit.jsx?");
+
+/***/ }),
+
+/***/ "./visual-builder/src/modules/dynamic-module/hooks/use-module-data/index.js":
+/*!**********************************************************************************!*\
+  !*** ./visual-builder/src/modules/dynamic-module/hooks/use-module-data/index.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"useModuleData\": () => (/* binding */ useModuleData)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nconst {\n  loggedFetch\n} = divi.ajax;\n\n/**\n * Custom hook to fetch module data.\n * \n * @return {Object} Object containing getModuleData, moduleData and isLoading.\n */\nconst useModuleData = () => {\n  const [moduleData, setModuleData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');\n  const [isLoading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);\n  const apiFetchController = new AbortController();\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => () => {\n    apiFetchController.abort(); // Abort fetch on unmount.\n  }, []);\n\n  // Fetch module data from REST API.\n  const getModuleData = title => {\n    setLoading(true);\n    loggedFetch({\n      restRoute: 'dtmc/v1/modules/dynamic-module',\n      method: 'GET',\n      data: {\n        title\n      },\n      signal: apiFetchController.signal\n    }).then(value => {\n      if (!apiFetchController.signal.aborted) {\n        setModuleData(value.data);\n        setLoading(false);\n      }\n    }).catch(error => {\n      console.log(error);\n      setLoading(false);\n    });\n  };\n  return {\n    getModuleData,\n    moduleData,\n    isLoading\n  };\n};\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/modules/dynamic-module/hooks/use-module-data/index.js?");
 
 /***/ }),
 
@@ -130,6 +140,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = React;
+
+/***/ }),
+
 /***/ "./visual-builder/src/modules/dynamic-module/module.json":
 /*!***************************************************************!*\
   !*** ./visual-builder/src/modules/dynamic-module/module.json ***!
@@ -177,6 +197,18 @@ eval("module.exports = JSON.parse('{\"name\":\"dtmc/static-module\",\"d4Shortcod
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
