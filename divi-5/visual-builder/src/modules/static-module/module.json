@@ -3,7 +3,7 @@
     "d4Shortcode": "dtmc_static_module",
     "title": "DTMC Static Module",
     "titles": "DTMC Static Modules",
-    "moduleIcon": "divi/module-blurb",
+    "moduleIcon": "divi/module-cta",
     "category": "module",
     "attributes": {
         "text": {

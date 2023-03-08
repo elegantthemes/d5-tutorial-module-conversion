@@ -10,13 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./visual-builder/src/icons/index.js":
+/*!*******************************************!*\
+  !*** ./visual-builder/src/icons/index.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_dynamic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module-dynamic */ \"./visual-builder/src/icons/module-dynamic/index.js\");\n\nconst {\n  addFilter\n} = window?.wp?.hooks;\n\n// Add module icons to the icon library.\naddFilter('iconLibrary.icon.map', 'd5TutorialModuleConversion', icons => {\n  return {\n    ...icons,\n    // This is important. Without this, all other icons will be overwritten.\n    [_module_dynamic__WEBPACK_IMPORTED_MODULE_0__.name]: _module_dynamic__WEBPACK_IMPORTED_MODULE_0__\n  };\n});\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/icons/index.js?");
+
+/***/ }),
+
+/***/ "./visual-builder/src/icons/module-dynamic/index.js":
+/*!**********************************************************!*\
+  !*** ./visual-builder/src/icons/module-dynamic/index.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"component\": () => (/* binding */ component),\n/* harmony export */   \"name\": () => (/* binding */ name),\n/* harmony export */   \"viewBox\": () => (/* binding */ viewBox)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nconst name = 'dtmc/module-dynamic';\nconst viewBox = '3 5 16 16';\n\n// SVG path. without the svg tag.\nconst component = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"g\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"path\", {\n  d: \"M4.5 20.25C4.30189 20.2474 4.11263 20.1676 3.97253 20.0275C3.83244 19.8874 3.75259 19.6981 3.75 19.5V4.5C3.75 4.30109 3.82902 4.11032 3.96967 3.96967C4.11032 3.82902 4.30109 3.75 4.5 3.75C4.69891 3.75 4.88968 3.82902 5.03033 3.96967C5.17098 4.11032 5.25 4.30109 5.25 4.5V19.5C5.24741 19.6981 5.16756 19.8874 5.02747 20.0275C4.88737 20.1676 4.69811 20.2474 4.5 20.25Z\"\n}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"path\", {\n  d: \"M19.5 20.25H4.5C4.30109 20.25 4.11032 20.171 3.96967 20.0303C3.82902 19.8897 3.75 19.6989 3.75 19.5C3.75 19.3011 3.82902 19.1103 3.96967 18.9697C4.11032 18.829 4.30109 18.75 4.5 18.75H19.5C19.6989 18.75 19.8897 18.829 20.0303 18.9697C20.171 19.1103 20.25 19.3011 20.25 19.5C20.25 19.6989 20.171 19.8897 20.0303 20.0303C19.8897 20.171 19.6989 20.25 19.5 20.25Z\"\n}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"path\", {\n  d: \"M14 14.75C13.9015 14.7504 13.8038 14.7312 13.7128 14.6934C13.6218 14.6557 13.5392 14.6001 13.47 14.53L11 12.06L8.53 14.53C8.38782 14.6624 8.19978 14.7346 8.00548 14.7311C7.81118 14.7277 7.62579 14.649 7.48838 14.5116C7.35096 14.3742 7.27225 14.1888 7.26882 13.9945C7.2654 13.8002 7.33752 13.6121 7.47 13.47L10.47 10.47C10.6106 10.3295 10.8012 10.2506 11 10.2506C11.1987 10.2506 11.3894 10.3295 11.53 10.47L14 12.94L17.47 9.46997C17.6122 9.33749 17.8002 9.26537 17.9945 9.26879C18.1888 9.27222 18.3742 9.35093 18.5116 9.48835C18.649 9.62576 18.7277 9.81115 18.7312 10.0054C18.7346 10.1997 18.6625 10.3878 18.53 10.53L14.53 14.53C14.4608 14.6001 14.3782 14.6557 14.2872 14.6934C14.1962 14.7312 14.0985 14.7504 14 14.75Z\"\n}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"path\", {\n  d: \"M18.5 13.84C18.3019 13.8374 18.1126 13.7576 17.9725 13.6175C17.8324 13.4774 17.7526 13.2881 17.75 13.09V10.25H15C14.8011 10.25 14.6103 10.171 14.4697 10.0303C14.329 9.88968 14.25 9.69891 14.25 9.5C14.25 9.30109 14.329 9.11032 14.4697 8.96967C14.6103 8.82902 14.8011 8.75 15 8.75H18.5C18.6981 8.75259 18.8874 8.83244 19.0275 8.97253C19.1676 9.11263 19.2474 9.30189 19.25 9.5V13.09C19.2474 13.2881 19.1676 13.4774 19.0275 13.6175C18.8874 13.7576 18.6981 13.8374 18.5 13.84Z\"\n}));\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/icons/module-dynamic/index.js?");
+
+/***/ }),
+
 /***/ "./visual-builder/src/index.js":
 /*!*************************************!*\
   !*** ./visual-builder/src/index.js ***!
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules */ \"./visual-builder/src/modules/index.js\");\n\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules */ \"./visual-builder/src/modules/index.js\");\n/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ \"./visual-builder/src/icons/index.js\");\n\n\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/index.js?");
 
 /***/ }),
 
@@ -276,7 +296,7 @@ module.exports = React;
   \***************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = JSON.parse('{\"name\":\"dtmc/dynamic-module\",\"d4Shortcode\":\"dtmc_dynamic_module\",\"title\":\"DTMC Dynamic Module\",\"titles\":\"DTMC Dynamic Modules\",\"moduleIcon\":\"divi/module-blurb\",\"category\":\"module\",\"attributes\":{\"text\":{\"type\":\"object\",\"default\":{\"text\":{\"desktop\":{\"value\":{\"color\":\"dark\"}}}}},\"titleFont\":{\"type\":\"object\",\"default\":{\"font\":{\"desktop\":{\"value\":{\"headingLevel\":\"h2\"}}}}}},\"customCssFields\":{\"title\":{\"subName\":\"title\",\"selectorSuffix\":\" .dtmc_dynamic_module_title\"}}}');\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/modules/dynamic-module/module.json?");
+eval("module.exports = JSON.parse('{\"name\":\"dtmc/dynamic-module\",\"d4Shortcode\":\"dtmc_dynamic_module\",\"title\":\"DTMC Dynamic Module\",\"titles\":\"DTMC Dynamic Modules\",\"moduleIcon\":\"dtmc/module-dynamic\",\"category\":\"module\",\"attributes\":{\"text\":{\"type\":\"object\",\"default\":{\"text\":{\"desktop\":{\"value\":{\"color\":\"dark\"}}}}},\"titleFont\":{\"type\":\"object\",\"default\":{\"font\":{\"desktop\":{\"value\":{\"headingLevel\":\"h2\"}}}}}},\"customCssFields\":{\"title\":{\"subName\":\"title\",\"selectorSuffix\":\" .dtmc_dynamic_module_title\"}}}');\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/modules/dynamic-module/module.json?");
 
 /***/ }),
 
@@ -286,7 +306,7 @@ eval("module.exports = JSON.parse('{\"name\":\"dtmc/dynamic-module\",\"d4Shortco
   \**************************************************************/
 /***/ ((module) => {
 
-eval("module.exports = JSON.parse('{\"name\":\"dtmc/static-module\",\"d4Shortcode\":\"dtmc_static_module\",\"title\":\"DTMC Static Module\",\"titles\":\"DTMC Static Modules\",\"moduleIcon\":\"divi/module-blurb\",\"category\":\"module\",\"attributes\":{\"text\":{\"type\":\"object\",\"default\":{\"text\":{\"desktop\":{\"value\":{\"color\":\"dark\"}}}}},\"titleFont\":{\"type\":\"object\",\"default\":{\"font\":{\"desktop\":{\"value\":{\"headingLevel\":\"h2\"}}}}}},\"customCssFields\":{\"title\":{\"subName\":\"title\",\"selectorSuffix\":\" .dtmc_static_module_title\"},\"content\":{\"subName\":\"content\",\"selectorSuffix\":\" .dtmc_static_module_content\"}}}');\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/modules/static-module/module.json?");
+eval("module.exports = JSON.parse('{\"name\":\"dtmc/static-module\",\"d4Shortcode\":\"dtmc_static_module\",\"title\":\"DTMC Static Module\",\"titles\":\"DTMC Static Modules\",\"moduleIcon\":\"divi/module-cta\",\"category\":\"module\",\"attributes\":{\"text\":{\"type\":\"object\",\"default\":{\"text\":{\"desktop\":{\"value\":{\"color\":\"dark\"}}}}},\"titleFont\":{\"type\":\"object\",\"default\":{\"font\":{\"desktop\":{\"value\":{\"headingLevel\":\"h2\"}}}}}},\"customCssFields\":{\"title\":{\"subName\":\"title\",\"selectorSuffix\":\" .dtmc_static_module_title\"},\"content\":{\"subName\":\"content\",\"selectorSuffix\":\" .dtmc_static_module_content\"}}}');\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./visual-builder/src/modules/static-module/module.json?");
 
 /***/ })
 
