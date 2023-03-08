@@ -1,4 +1,5 @@
 import { ModuleStyles } from './module-styles';
+import { ModuleScriptData } from './module-script-data';
 
 const { ModuleContainer } = divi.module;
 
@@ -16,6 +17,7 @@ export const StaticModuleEdit = ({
       attrs={attrs}
       id={id}
       name={name}
+      scriptDataComponent={ModuleScriptData}
       stylesComponent={ModuleStyles}
     >
       <div className="et_pb_module_inner">

@@ -26,6 +26,7 @@ class DynamicModule implements DependencyInterface {
 	use DynamicModuleTraits\RenderCallbackTrait;
 	use DynamicModuleTraits\RenderContentTrait;
 	use DynamicModuleTraits\ModuleStylesTrait;
+	use DynamicModuleTraits\ModuleScriptDataTrait;
 
 	public function load() {
 		$module_json_folder_path = dirname( __DIR__, 2 ) . '/visual-builder/src/modules/dynamic-module';

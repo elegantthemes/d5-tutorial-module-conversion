@@ -61,7 +61,7 @@ trait RenderCallbackTrait {
 				// 'classnamesFunction'  => [ DynamicModule::class, 'module_classnames' ],
 				'moduleCategory'  => $block->block_type->category,
 				'stylesComponent' => [ DynamicModule::class, 'module_styles' ],
-				// 'scriptDataComponent' => [ DynamicModule::class, 'module_script_data' ],
+				'scriptDataComponent' => [ DynamicModule::class, 'module_script_data' ],
 				'parentAttrs'     => $parent->attrs ?? [],
 				'parentId'        => $parent->id ?? '',
 				'parentName'      => $parent->blockName ?? '',

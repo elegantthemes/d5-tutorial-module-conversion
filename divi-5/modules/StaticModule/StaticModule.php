@@ -24,6 +24,7 @@ class StaticModule implements DependencyInterface {
 
 	use StaticModuleTraits\RenderCallbackTrait;
 	use StaticModuleTraits\ModuleStylesTrait;
+	use StaticModuleTraits\ModuleScriptDataTrait;
 
 	public function load() {
 		$module_json_folder_path = dirname( __DIR__, 2 ) . '/visual-builder/src/modules/static-module';
