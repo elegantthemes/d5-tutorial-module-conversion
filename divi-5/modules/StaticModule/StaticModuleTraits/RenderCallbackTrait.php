@@ -37,6 +37,9 @@ trait RenderCallbackTrait {
 		$rendered_content = HTMLUtility::render(
 			[
 				'tag'               => 'div',
+				'attributes'        => [
+					'class' => 'dtmc_static_module_content',
+				],
 				'childrenSanitizer' => 'et_core_esc_previously',
 				'children'          => $module_attrs['content']['desktop']['value'] ?? '',
 			]
@@ -71,16 +74,7 @@ trait RenderCallbackTrait {
 						'orderIndex'    => $block->parsed_block['orderIndex'],
 						'storeInstance' => $block->parsed_block['storeInstance'],
 					]
-				) . HTMLUtility::render(
-					[
-						'tag'               => 'div',
-						'attributes'        => [
-							'class' => 'dtmc_static_module_content',
-						],
-						'childrenSanitizer' => 'et_core_esc_previously',
-						'children'          => $header . $rendered_content,
-					]
-				),
+				) . $header . $rendered_content,
 			]
 		);
 	}
