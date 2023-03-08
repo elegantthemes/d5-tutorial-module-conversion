@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use DTMC\Modules\StaticModule\StaticModule;
+use DTMC\Modules\DynamicModule\DynamicModule;
 
 // Register REST routes.
 add_action(
@@ -28,5 +29,6 @@ add_action(
 	function( $dependency_tree ) {
 
 		$dependency_tree->add_dependency( new StaticModule() );
+		$dependency_tree->add_dependency( new DynamicModule() );
 	}
 );
