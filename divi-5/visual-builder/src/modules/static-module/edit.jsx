@@ -1,5 +1,6 @@
 import { ModuleStyles } from './module-styles';
 import { ModuleScriptData } from './module-script-data';
+import { moduleClassnames } from './module-classnames';
 
 const { ModuleContainer } = divi.module;
 
@@ -19,6 +20,7 @@ export const StaticModuleEdit = ({
       name={name}
       scriptDataComponent={ModuleScriptData}
       stylesComponent={ModuleStyles}
+      classnamesFunction={moduleClassnames}
     >
       <div className="et_pb_module_inner">
         <HeaderLevel className="dtmc_static_module_title">{title}</HeaderLevel>

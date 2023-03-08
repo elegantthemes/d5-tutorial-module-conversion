@@ -50,22 +50,22 @@ trait RenderCallbackTrait {
 		return Module::render(
 			[
 				// FE only.
-				'orderIndex'      => $block->parsed_block['orderIndex'],
-				'storeInstance'   => $block->parsed_block['storeInstance'],
+				'orderIndex'          => $block->parsed_block['orderIndex'],
+				'storeInstance'       => $block->parsed_block['storeInstance'],
 
 				// VB equivalent.
-				'attrs'           => $block_attributes,
-				'id'              => $block->parsed_block['id'],
-				'moduleClassName' => '',
-				'name'            => $block->block_type->name,
-				// 'classnamesFunction'  => [ DynamicModule::class, 'module_classnames' ],
-				'moduleCategory'  => $block->block_type->category,
-				'stylesComponent' => [ DynamicModule::class, 'module_styles' ],
+				'attrs'               => $block_attributes,
+				'id'                  => $block->parsed_block['id'],
+				'moduleClassName'     => '',
+				'name'                => $block->block_type->name,
+				'classnamesFunction'  => [ DynamicModule::class, 'module_classnames' ],
+				'moduleCategory'      => $block->block_type->category,
+				'stylesComponent'     => [ DynamicModule::class, 'module_styles' ],
 				'scriptDataComponent' => [ DynamicModule::class, 'module_script_data' ],
-				'parentAttrs'     => $parent->attrs ?? [],
-				'parentId'        => $parent->id ?? '',
-				'parentName'      => $parent->blockName ?? '',
-				'children'        => BackgroundComponents::component(
+				'parentAttrs'         => $parent->attrs ?? [],
+				'parentId'            => $parent->id ?? '',
+				'parentName'          => $parent->blockName ?? '',
+				'children'            => BackgroundComponents::component(
 					[
 						'attr'          => $block_attributes['background'] ?? [],
 						'id'            => $block->parsed_block['id'],

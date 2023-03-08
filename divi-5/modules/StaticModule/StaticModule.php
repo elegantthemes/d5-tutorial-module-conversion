@@ -23,6 +23,7 @@ use DTMC\Modules\StaticModule\StaticModuleTraits;
 class StaticModule implements DependencyInterface {
 
 	use StaticModuleTraits\RenderCallbackTrait;
+	use StaticModuleTraits\ModuleClassnamesTrait;
 	use StaticModuleTraits\ModuleStylesTrait;
 	use StaticModuleTraits\ModuleScriptDataTrait;
 

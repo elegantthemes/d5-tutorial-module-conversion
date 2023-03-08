@@ -25,6 +25,7 @@ class DynamicModule implements DependencyInterface {
 
 	use DynamicModuleTraits\RenderCallbackTrait;
 	use DynamicModuleTraits\RenderContentTrait;
+	use DynamicModuleTraits\ModuleClassnamesTrait;
 	use DynamicModuleTraits\ModuleStylesTrait;
 	use DynamicModuleTraits\ModuleScriptDataTrait;
 
