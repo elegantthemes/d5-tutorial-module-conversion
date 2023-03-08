@@ -3,6 +3,7 @@ import metadata from './module.json';
 import { SettingsAdvanced } from './settings-advanced';
 import { SettingsContent } from './settings-content';
 import { SettingsDesign } from './settings-design';
+import { placeholderContent } from './placeholder-content';
 
 export const staticModuleMetadata = metadata;
 
@@ -15,4 +16,5 @@ export const staticModule = {
     design:   SettingsDesign,
     advanced: SettingsAdvanced,
   },
+  placeholderContent,
 };
