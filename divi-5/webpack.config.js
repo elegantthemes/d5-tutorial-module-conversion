@@ -18,6 +18,14 @@ module.exports = {
     react: 'React',
     'react-dom': 'ReactDOM',
     jquery: 'jQuery',
+    '@divi/ajax': ['divi', 'ajax'],
+    '@divi/field-library': ['divi', 'fieldLibrary'],
+    '@divi/modal': ['divi', 'modal'],
+    '@divi/module': ['divi', 'module'],
+    '@divi/module-library': ['divi', 'moduleLibrary'],
+    '@divi/module-utils': ['divi', 'moduleUtils'],
+    '@wordpress/hooks': ['wp', 'hooks'],
+    '@wordpress/i18n': ['wp', 'i18n'],
   },
 
   // This option determine how different types of module within the project will be treated.

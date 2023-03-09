@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 
+import { ModuleContainer } from '@divi/module'; // ModuleContainer is a component that wraps the module's edit component.
+
 import { ModuleStyles } from './module-styles';
 import { ModuleScriptData } from './module-script-data';
 import { useModuleData } from './hooks/use-module-data';
 import { moduleClassnames } from './module-classnames';
-
-
-const { ModuleContainer } = divi.module; // ModuleContainer is a component that wraps the module's edit component.
 
 /**
  * Edit component for Dynamic Module.

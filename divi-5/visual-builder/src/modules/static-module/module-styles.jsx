@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { cssFields } from './custom-css';
-
-const {
+import {
   AnimationStyle,
   BackgroundStyle,
   BorderStyle,
@@ -20,7 +18,9 @@ const {
   TextStyle,
   TransformStyle,
   ZIndexStyle,
-} = window.divi.module;
+} from '@divi/module';
+
+import { cssFields } from './custom-css';
 
 /**
  * Module style component for static module

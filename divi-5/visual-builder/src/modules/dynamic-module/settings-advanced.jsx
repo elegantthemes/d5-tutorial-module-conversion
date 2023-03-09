@@ -1,14 +1,15 @@
 import React from 'react';
-import { cssFields } from './custom-css';
 
-const {
+import {
   Css,
   IdClasses,
   PositionGroup,
   ScrollGroup,
   Transition,
   Visibility,
-} = divi.module;
+} from '@divi/module';
+
+import { cssFields } from './custom-css';
 
 /**
  * Advanced Settings panel for the Dynamic Module.

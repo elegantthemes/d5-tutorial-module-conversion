@@ -1,8 +1,8 @@
+import { ModuleContainer } from '@divi/module';
+
 import { ModuleStyles } from './module-styles';
 import { ModuleScriptData } from './module-script-data';
 import { moduleClassnames } from './module-classnames';
-
-const { ModuleContainer } = divi.module;
 
 export const StaticModuleEdit = ({
   attrs,

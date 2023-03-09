@@ -1,8 +1,8 @@
-import * as moduleDynamic from './module-dynamic';
-
-const {
+import {
   addFilter,
-} = window?.wp?.hooks;
+} from '@wordpress/hooks';
+
+import * as moduleDynamic from './module-dynamic';
 
 // Add module icons to the icon library.
 addFilter('iconLibrary.icon.map', 'd5TutorialModuleConversion', (icons) => {

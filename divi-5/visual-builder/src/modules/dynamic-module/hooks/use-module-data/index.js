@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const { loggedFetch } = divi.ajax;
+import { loggedFetch } from '@divi/ajax';
 
 /**
  * Custom hook to fetch module data.

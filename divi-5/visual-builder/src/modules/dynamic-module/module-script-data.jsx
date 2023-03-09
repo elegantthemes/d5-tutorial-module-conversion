@@ -1,8 +1,8 @@
 import React from 'react';
 
-const {
+import {
   useStickyScriptDataContainer,
-} = window?.divi?.module || {};
+} from '@divi/module';
 
 export const ModuleScriptData = ({
   attrs,

@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { defaultSettingsAttrs } from './constants';
+import { __ } from '@wordpress/i18n';
 
-const { __ } = wp.i18n;
-
-const {
+import {
   RichTextContainer,
   TextContainer,
-} = divi.fieldLibrary;
-const { GroupContainer } = divi.modal;
-const {
+} from '@divi/field-library';
+import { GroupContainer } from '@divi/modal';
+import {
   AdminLabel,
   Background,
   FieldContainer,
   LinkOptions,
-} = divi.module;
+} from '@divi/module';
+
+import { defaultSettingsAttrs } from './constants';
 
 /**
  * Content Settings panel for the Static Module.

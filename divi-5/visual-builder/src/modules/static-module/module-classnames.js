@@ -1,7 +1,7 @@
-const {
+import {
   animationClassnames,
   textOptionsClassnames,
-} = window?.divi?.module;
+} from '@divi/module';
 
 export const moduleClassnames = ({
   classnamesInstance,

@@ -1,5 +1,5 @@
-const { __ } = wp.i18n;
-const { mergeAttrs } = divi.moduleUtils;
+import { __ } from '@wordpress/i18n';
+import { mergeAttrs } from '@divi/module-utils';
 
 /**
  * Default attributes. Default attributes that are needed on rendered module

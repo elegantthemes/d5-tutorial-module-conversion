@@ -1,6 +1,6 @@
 import metadata from './module.json';
 
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 
 const customCssFields = metadata.customCssFields;
 

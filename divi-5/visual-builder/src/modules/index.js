@@ -1,8 +1,8 @@
+import { addAction } from '@wordpress/hooks';
+import { registerModule } from '@divi/module-library';
+
 import { dynamicModule, dynamicModuleMetadata } from "./dynamic-module";
 import { staticModule, staticModuleMetadata } from "./static-module";
-
-const { addAction } = wp.hooks;
-const { registerModule } =  divi.moduleLibrary;
 
 addAction('moduleLibrary.registerModuleLibraryStore.after', 'dtmc', () => {
     registerModule(staticModuleMetadata, staticModule);

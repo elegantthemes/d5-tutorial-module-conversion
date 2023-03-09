@@ -1,8 +1,8 @@
 import React from 'react';
 
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 
-const {
+import {
   Animation,
   Border,
   BoxShadow,
@@ -13,7 +13,7 @@ const {
   Spacing,
   Text,
   Transform,
-} = divi.module;
+} from '@divi/module';
 
 import { defaultSettingsAttrs } from './constants';
 
