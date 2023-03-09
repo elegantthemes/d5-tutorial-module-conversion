@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 
 import { ModuleContainer } from '@divi/module'; // ModuleContainer is a component that wraps the module's edit component.
+import { mergeAttrs } from '@divi/module-utils';
 
 import { ModuleStyles } from './module-styles';
 import { ModuleScriptData } from './module-script-data';
 import { useModuleData } from './hooks/use-module-data';
 import { moduleClassnames } from './module-classnames';
+import { defaultAttrs } from './constants';
 
 /**
  * Edit component for Dynamic Module.
@@ -15,8 +17,13 @@ export const DynamicModuleEdit = ({
   id,
   name,
 }) => {
-  const HeaderLevel = attrs?.titleFont?.font?.desktop?.value?.headingLevel ?? 'h2';
-  const title       = attrs?.title?.desktop?.value ?? '';
+  const moduleAttrs = mergeAttrs({
+    defaultAttrs,
+    attrs,
+  });
+
+  const HeaderLevel = moduleAttrs?.titleFont?.font?.desktop?.value?.headingLevel ?? 'h2';
+  const title = moduleAttrs?.title?.desktop?.value ?? '';
 
   const { getModuleData, moduleData, isLoading, } = useModuleData();
 
@@ -26,7 +33,7 @@ export const DynamicModuleEdit = ({
 
   return (
     <ModuleContainer
-      attrs={attrs}
+      attrs={moduleAttrs}
       id={id}
       name={name}
       scriptDataComponent={ModuleScriptData}

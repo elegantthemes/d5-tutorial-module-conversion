@@ -16,7 +16,7 @@ export const defaultAttrs = {
     text: {
       desktop: {
         value: {
-          color: 'dark',
+          color: 'light',
         },
       },
     },

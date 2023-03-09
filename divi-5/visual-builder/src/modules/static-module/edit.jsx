@@ -1,21 +1,28 @@
 import { ModuleContainer } from '@divi/module';
+import { mergeAttrs } from '@divi/module-utils';
 
 import { ModuleStyles } from './module-styles';
 import { ModuleScriptData } from './module-script-data';
 import { moduleClassnames } from './module-classnames';
+import { defaultAttrs } from './constants';
 
 export const StaticModuleEdit = ({
   attrs,
   id,
   name,
 }) => {
-  const HeaderLevel = attrs?.titleFont?.font?.desktop?.value?.headingLevel ?? 'h2';
-  const title       = attrs?.title?.desktop?.value ?? '';
-  const content     = attrs?.content?.desktop?.value ?? '';
+  const moduleAttrs = mergeAttrs({
+    defaultAttrs,
+    attrs,
+  });
+
+  const HeaderLevel = moduleAttrs?.titleFont?.font?.desktop?.value?.headingLevel ?? 'h2';
+  const title = moduleAttrs?.title?.desktop?.value ?? '';
+  const content = moduleAttrs?.content?.desktop?.value ?? '';
 
   return (
     <ModuleContainer
-      attrs={attrs}
+      attrs={moduleAttrs}
       id={id}
       name={name}
       scriptDataComponent={ModuleScriptData}
