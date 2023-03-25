@@ -7,6 +7,7 @@ import {
   BoxShadowStyle,
   CssStyle,
   DisabledOnStyle,
+  ElementStyle,
   FiltersStyle,
   FontBodyStyle,
   FontStyle,
@@ -34,9 +35,90 @@ export const ModuleStyles = ({
   noStyleTag
 }) => (
   <StyleContainer mode={mode} state={state} noStyleTag={noStyleTag}>
-    <BackgroundStyle
+    {/* Element: Module */}
+    <ElementStyle
       selector={orderClass}
-      attr={attrs.background}
+      attrs={{
+        animation: attrs?.animation ?? {},
+        background: attrs?.background ?? {},
+        border: attrs?.border ?? {},
+        boxShadow: attrs?.boxShadow ?? {},
+        disabledOn: attrs?.disabledOn ?? {},
+        filter: attrs?.filter ?? {},
+        overflow: attrs?.overflow ?? {},
+        position: attrs?.position ?? {},
+        spacing: attrs?.spacing ?? {},
+        sizing: attrs?.sizing ?? {},
+        transform: attrs?.transform ?? {},
+        zIndex: attrs?.zIndex ?? {},
+      }}
+      disabledOn={{
+        disabledModuleVisibility: settings?.disabledModuleVisibility
+      }}
+      spacing={{
+        important: true,
+      }}
+      sizing={{
+        propertySelectors: {
+          desktop: {
+            value: {
+              'margin-left': `${orderClass}.et_pb_module`,
+              'margin-right': `${orderClass}.et_pb_module`,
+            },
+          },
+        },
+        important: {
+          desktop: {
+            value: {
+              'margin-left': true,
+              'margin-right': true,
+            },
+          },
+        }
+      }}
+    />
+    <CssStyle
+      selector={orderClass}
+      attr={attrs.css}
+      cssFields={cssFields}
+    />
+
+    {/* Element: Title */}
+    <ElementStyle
+      selector={[`${orderClass} h2.dtmc_dynamic_module_title`,
+      `${orderClass} h1.dtmc_dynamic_module_title`,
+      `${orderClass} h3.dtmc_dynamic_module_title`,
+      `${orderClass} h4.dtmc_dynamic_module_title`,
+      `${orderClass} h5.dtmc_dynamic_module_title`,
+      `${orderClass} h6.dtmc_dynamic_module_title`].join(', ')}
+      attrs={{
+        font: attrs?.titleFont ?? {},
+      }}
+      font={{
+        headingLevel: 'h2',
+        important: true,
+      }}
+    />
+
+    {/* Element: Content */}
+    <ElementStyle
+      selector={`${orderClass} .dtmc_dynamic_module_content`}
+      attrs={{
+        bodyFont: attrs?.bodyFont ?? {},
+      }}
+      bodyFont={{
+        important: {
+          body: {
+            font: {
+              desktop: {
+                value: {
+                  color: true,
+                },
+              },
+            },
+          },
+        }
+      }}
     />
     <TextStyle
       selector={[`${orderClass} .et_pb_promo_description`,
@@ -51,99 +133,6 @@ export const ModuleStyles = ({
           },
         },
       }}
-    />
-    <FontStyle
-      selector={[`${orderClass} h2.dtmc_dynamic_module_title`,
-      `${orderClass} h1.dtmc_dynamic_module_title`,
-      `${orderClass} h3.dtmc_dynamic_module_title`,
-      `${orderClass} h4.dtmc_dynamic_module_title`,
-      `${orderClass} h5.dtmc_dynamic_module_title`,
-      `${orderClass} h6.dtmc_dynamic_module_title`].join(', ')}
-      attr={attrs.titleFont}
-      headingLevel="h2"
-      important
-    />
-    <FontBodyStyle
-      selector={`${orderClass} .dtmc_dynamic_module_content`}
-      attr={attrs.bodyFont}
-      important={{
-        body: {
-          font: {
-            desktop: {
-              value: {
-                color: true,
-              },
-            },
-          },
-        },
-      }}
-    />
-    <SpacingStyle
-      selector={orderClass}
-      attr={attrs.spacing}
-      important
-    />
-    <SizingStyle
-      selector={orderClass}
-      attr={attrs.sizing}
-      propertySelectors={{
-        desktop: {
-          value: {
-            'margin-left': `${orderClass}.et_pb_module`,
-            'margin-right': `${orderClass}.et_pb_module`,
-          },
-        },
-      }}
-      important={{
-        desktop: {
-          value: {
-            'margin-left': true,
-            'margin-right': true,
-          },
-        },
-      }}
-    />
-    <BorderStyle
-      selector={orderClass}
-      attr={attrs.border}
-    />
-    <BoxShadowStyle
-      selector={orderClass}
-      attr={attrs.boxShadow}
-    />
-    <FiltersStyle
-      selector={orderClass}
-      attr={attrs.filter}
-    />
-    <TransformStyle
-      selector={orderClass}
-      attr={attrs.transform}
-    />
-    <AnimationStyle
-      selector={orderClass}
-      attr={attrs.animation}
-    />
-    <CssStyle
-      selector={orderClass}
-      attr={attrs.css}
-      cssFields={cssFields}
-    />
-    <DisabledOnStyle
-      selector={orderClass}
-      attr={attrs.disabledOn}
-      disabledModuleVisibility={settings?.disabledModuleVisibility}
-    />
-    <OverflowStyle
-      selector={orderClass}
-      attr={attrs.overflow}
-    />
-    <PositionStyle
-      selector={orderClass}
-      attr={attrs.position}
-    />
-    <ZIndexStyle
-      selector={orderClass}
-      attr={attrs.zIndex}
     />
   </StyleContainer>
 );
