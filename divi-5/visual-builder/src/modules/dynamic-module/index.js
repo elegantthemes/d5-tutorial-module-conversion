@@ -4,6 +4,7 @@ import { SettingsAdvanced } from './settings-advanced';
 import { SettingsContent } from './settings-content';
 import { SettingsDesign } from './settings-design';
 import { placeholderContent } from './placeholder-content';
+import { conversionOutline } from './conversion-outline';
 
 export const dynamicModuleMetadata = metadata;
 
@@ -17,4 +18,5 @@ export const dynamicModule = {
     advanced: SettingsAdvanced,
   },
   placeholderContent,
+  conversionOutline,
 };

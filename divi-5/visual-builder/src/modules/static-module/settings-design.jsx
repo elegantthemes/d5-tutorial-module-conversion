@@ -2,45 +2,45 @@ import React from 'react';
 
 import { __ } from '@wordpress/i18n';
 
-import {
-  Animation,
-  Border,
-  BoxShadow,
-  Filters,
-  Font,
+const {
+  AnimationGroup,
+  BorderGroup,
+  BoxShadowGroup,
+  FiltersGroup,
+  FontGroup,
   FontBodyGroup,
-  Sizing,
-  Spacing,
-  Text,
-  Transform,
-} from '@divi/module';
+  SizingGroup,
+  SpacingGroup,
+  TextGroup,
+  TransformGroup,
+} = window?.divi?.module;
 
-import { defaultSettingsAttrs } from './constants';
 
 /**
  * Design Settings panel for the Static Module.
  */
-export const SettingsDesign = () => (
+export const SettingsDesign = ({ defaultSettingsAttrs }) => (
   <React.Fragment>
-    <Text
-        defaultGroupAttr={defaultSettingsAttrs.text}
+    <TextGroup
+      defaultGroupAttr={defaultSettingsAttrs?.module?.advanced?.text}
     />
-    <Font
+    <FontGroup
       groupLabel={__('Title Text', 'd5-tutorial-module-conversion')}
-      attrName="titleFont"
       fieldLabel={__('Title', 'd5-tutorial-module-conversion')}
-      hideElements={{
-        headingLevel: false,
+      fields={{
+        headingLevel: {
+          render: true,
+        },
       }}
-      defaultGroupAttr={defaultSettingsAttrs.titleFont}
+      defaultGroupAttr={defaultSettingsAttrs?.title?.decoration?.font}
     />
     <FontBodyGroup />
-    <Sizing />
-    <Spacing />
-    <Border />
-    <BoxShadow />
-    <Filters />
-    <Transform />
-    <Animation />
+    <SizingGroup />
+    <SpacingGroup />
+    <BorderGroup />
+    <BoxShadowGroup />
+    <FiltersGroup />
+    <TransformGroup />
+    <AnimationGroup />
   </React.Fragment>
 );

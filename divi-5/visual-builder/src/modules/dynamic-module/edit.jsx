@@ -1,39 +1,48 @@
 import { useEffect } from 'react';
 
-import { ModuleContainer } from '@divi/module'; // ModuleContainer is a component that wraps the module's edit component.
-import { mergeAttrs } from '@divi/module-utils';
-
 import { ModuleStyles } from './module-styles';
 import { ModuleScriptData } from './module-script-data';
-import { useModuleData } from './hooks/use-module-data';
 import { moduleClassnames } from './module-classnames';
-import { defaultAttrs } from './constants';
+
+const { useFetch } = window?.divi?.rest;
+const { getAttrByMode } = window?.divi?.moduleUtils;
+const { ModuleContainer } = window?.divi?.module;
 
 /**
  * Edit component for Dynamic Module.
  */
 export const DynamicModuleEdit = ({
   attrs,
+  elements,
   id,
   name,
 }) => {
-  const moduleAttrs = mergeAttrs({
-    defaultAttrs,
-    attrs,
-  });
 
-  const HeaderLevel = moduleAttrs?.titleFont?.font?.desktop?.value?.headingLevel ?? 'h2';
-  const title = moduleAttrs?.title?.desktop?.value ?? '';
+  const title = getAttrByMode(attrs?.title?.innerContent);
 
-  const { getModuleData, moduleData, isLoading, } = useModuleData();
+  const {
+    fetch,
+    response,
+    isLoading,
+  } = useFetch('');
 
   useEffect(() => {
-    getModuleData(title)
+    // Fetching data from REST API.
+    fetch({
+      method:    'GET',
+      restRoute: '/dtmc/v1/module-data/dynamic-module',
+      data:      {
+        title,
+      },
+    }).catch(error => {
+      console.log(error);
+    });
   }, [title]);
 
   return (
     <ModuleContainer
-      attrs={moduleAttrs}
+      attrs={attrs}
+      elements={elements}
       id={id}
       name={name}
       scriptDataComponent={ModuleScriptData}
@@ -41,12 +50,14 @@ export const DynamicModuleEdit = ({
       classnamesFunction={moduleClassnames}
     >
       <div>
-        <HeaderLevel className="dtmc_dynamic_module_title">{title}</HeaderLevel>
+        {elements.render({
+          attrName: 'title',
+        })}
         {isLoading && <div>Loading...</div>}
         {!isLoading && (
           <div
             className="dtmc_dynamic_module_content"
-            dangerouslySetInnerHTML={{ __html: moduleData }}
+            dangerouslySetInnerHTML={{ __html: response?.data ?? '' }}
           />
         )}
       </div>

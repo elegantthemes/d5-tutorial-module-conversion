@@ -1,15 +1,19 @@
-import {
-  animationClassnames,
+const {
+  elementClassnames,
   textOptionsClassnames,
-} from '@divi/module';
+} = window?.divi?.module;
 
 export const moduleClassnames = ({
   classnamesInstance,
   attrs,
 }) => {
   // Text Options.
-  classnamesInstance.add(textOptionsClassnames(attrs?.text, { orientation: false }));
+  classnamesInstance.add(textOptionsClassnames(attrs?.module?.advanced?.text, { orientation: false }));
 
-  // Animation Options.
-  classnamesInstance.add(animationClassnames(attrs?.animation));
+  // Add element classnames.
+  classnamesInstance.add(
+    elementClassnames({
+      attrs: attrs?.module?.decoration ?? {},
+    }),
+  );
 }

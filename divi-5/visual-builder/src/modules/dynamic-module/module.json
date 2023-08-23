@@ -3,38 +3,94 @@
     "d4Shortcode": "dtmc_dynamic_module",
     "title": "DTMC Dynamic Module",
     "titles": "DTMC Dynamic Modules",
-    "moduleIcon": "dtmc/module-dynamic",
     "category": "module",
     "attributes": {
-        "text": {
-            "type": "object",
-            "default": {
-                "text": {
-                    "desktop": {
-                        "value": {
-                            "color": "light"
-                        }
-                    }
+      "module": {
+        "type": "object",
+        "selector": "{{selector}}",
+        "default": {
+          "advanced": {
+            "text": {
+              "desktop": {
+                "value": {
+                  "color": "light"
                 }
+              }
             }
+          }
         },
-        "titleFont": {
-            "type": "object",
-            "default": {
-                "font": {
-                    "desktop": {
-                        "value": {
-                            "headingLevel": "h2"
-                        }
-                    }
+        "styleProps": {
+          "sizing": {
+            "propertySelectors": {
+              "desktop": {
+                "value": {
+                  "margin-left": "{{selector}}.et_pb_module",
+                  "margin-right": "{{selector}}.et_pb_module"
                 }
+              }
+            },
+            "important": {
+              "desktop": {
+                "value": {
+                  "margin-left": true,
+                  "margin-right": true
+                }
+              }
             }
+          }
         }
+      },
+      "title": {
+        "type": "object",
+        "selector": "{{selector}} h2.dtmc_dynamic_module_title, {{selector}} h1.dtmc_dynamic_module_title, {{selector}} h3.dtmc_dynamic_module_title, {{selector}} h4.dtmc_dynamic_module_title, {{selector}} h5.dtmc_dynamic_module_title, {{selector}} h6.dtmc_dynamic_module_title",
+        "attributes": {
+          "class": "dtmc_dynamic_module_title"
+        },
+        "tagName": "h2",
+        "elementType": "heading",
+        "childrenSanitizer": "et_core_esc_previously",
+        "default": {
+          "font": {
+            "font": {
+              "desktop": {
+                "value": {
+                  "headingLevel": "h2"
+                }
+              }
+            }
+          }
+        },
+        "styleProps": {
+          "font": {
+            "headingLevel": "h2",
+            "important": true
+          }
+        }
+      },
+      "content": {
+        "type": "object",
+        "selector": "{{selector}} .dtmc_dynamic_module_content",
+        "styleProps": {
+          "bodyFont": {
+            "important": {
+              "body": {
+                "font": {
+                  "desktop": {
+                    "value": {
+                      "color": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "customCssFields": {
-        "title": {
-            "subName": "title",
-            "selectorSuffix": " .dtmc_dynamic_module_title"
-        }
+      "title": {
+        "subName": "title",
+        "selectorSuffix": " .dtmc_dynamic_module_title"
+      }
     }
-}
+  }

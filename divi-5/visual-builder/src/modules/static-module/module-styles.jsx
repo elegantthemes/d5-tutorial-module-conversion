@@ -1,19 +1,19 @@
 import React from 'react';
 
-import {
+import { cssFields } from './custom-css';
+
+const {
   CssStyle,
-  ElementStyle,
   StyleContainer,
   TextStyle,
-} from '@divi/module';
-
-import { cssFields } from './custom-css';
+} = window?.divi?.module;
 
 /**
  * Module style component for static module
  */
 export const ModuleStyles = ({
   attrs,
+  elements,
   settings,
   orderClass,
   mode,
@@ -22,90 +22,22 @@ export const ModuleStyles = ({
 }) => (
   <StyleContainer mode={mode} state={state} noStyleTag={noStyleTag}>
     {/* Element: Module */}
-    <ElementStyle
-      attrs={{
-        animation: attrs?.animation ?? {},
-        background: attrs?.background ?? {},
-        border: attrs?.border ?? {},
-        boxShadow: attrs?.boxShadow ?? {},
-        disabledOn: attrs?.disabledOn ?? {},
-        filter: attrs?.filter ?? {},
-        overflow: attrs?.overflow ?? {},
-        position: attrs?.position ?? {},
-        sizing: attrs?.sizing ?? {},
-        spacing: attrs?.spacing ?? {},
-        transform: attrs?.transform ?? {},
-        zIndex: attrs?.zIndex ?? {},
-      }}
-      selector={orderClass}
-      disabledOn={{
-        disabledModuleVisibility: settings?.disabledModuleVisibility
-      }}
-      sizing={{
-        propertySelectors: {
-          desktop: {
-            value: {
-              'margin-left': `${orderClass}.et_pb_module`,
-              'margin-right': `${orderClass}.et_pb_module`,
-            },
-          },
+    {elements.style({
+      attrName:   'module',
+      styleProps: {
+        disabledOn: {
+          disabledModuleVisibility: settings?.disabledModuleVisibility,
         },
-        important: {
-          desktop: {
-            value: {
-              'margin-left': true,
-              'margin-right': true,
-            },
-          },
-        }
-      }}
-    />
+      },
+    })}
     <CssStyle
       selector={orderClass}
       attr={attrs.css}
       cssFields={cssFields}
     />
-
-    {/* Element: Title */}
-    <ElementStyle
-      attrs={{
-        font: attrs?.titleFont ?? {},
-      }}
-      selector={[`${orderClass} h2.dtmc_static_module_title`,
-      `${orderClass} h1.dtmc_static_module_title`,
-      `${orderClass} h3.dtmc_static_module_title`,
-      `${orderClass} h4.dtmc_static_module_title`,
-      `${orderClass} h5.dtmc_static_module_title`,
-      `${orderClass} h6.dtmc_static_module_title`].join(', ')}
-      font={{
-        headingLevel: 'h2',
-        important: true,
-      }}
-    />
-
-    {/* Element: Content */}
-    <ElementStyle
-      selector={`${orderClass} .dtmc_static_module_content`}
-      attrs={{
-        bodyFont: attrs?.bodyFont ?? {},
-      }}
-      bodyFont={{
-        important: {
-          body: {
-            font: {
-              desktop: {
-                value: {
-                  color: true,
-                },
-              },
-            },
-          },
-        }
-      }}
-    />
     <TextStyle
       selector={`${orderClass} .dtmc_static_module_content`}
-      attr={attrs?.text}
+      attr={attrs?.module?.advanced?.text}
       propertySelectors={{
         textShadow: {
           desktop: {
@@ -116,5 +48,15 @@ export const ModuleStyles = ({
         },
       }}
     />
+
+    {/* Element: Title */}
+    {elements.style({
+      attrName: 'title',
+    })}
+
+    {/* Element: Content */}
+    {elements.style({
+      attrName: 'content',
+    })}
   </StyleContainer>
 );

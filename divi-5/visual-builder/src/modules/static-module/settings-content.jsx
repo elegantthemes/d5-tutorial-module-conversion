@@ -2,31 +2,29 @@ import React from 'react';
 
 import { __ } from '@wordpress/i18n';
 
-import {
+const {
   RichTextContainer,
   TextContainer,
-} from '@divi/field-library';
-import { GroupContainer } from '@divi/modal';
-import {
-  AdminLabel,
-  Background,
+} = window?.divi?.fieldLibrary;
+const { GroupContainer } = window?.divi?.modal;
+const {
+  AdminLabelGroup,
+  BackgroundGroup,
   FieldContainer,
-  LinkOptions,
-} from '@divi/module';
-
-import { defaultSettingsAttrs } from './constants';
+  LinkGroup,
+} = window?.divi?.module;
 
 /**
  * Content Settings panel for the Static Module.
  */
-export const SettingsContent = () => (
+export const SettingsContent = ({ defaultSettingsAttrs }) => (
   <React.Fragment>
     <GroupContainer
       id="mainContent"
       title={__('Text', 'd5-tutorial-module-conversion')}
     >
       <FieldContainer
-        attrName="title"
+        attrName="title.innerContent"
         label={__('Title', 'd5-tutorial-module-conversion')}
         description={__('Text entered here will appear as title.', 'd5-tutorial-module-conversion')}
         sticky={false}
@@ -34,7 +32,7 @@ export const SettingsContent = () => (
         <TextContainer />
       </FieldContainer>
       <FieldContainer
-        attrName="content"
+        attrName="content.innerContent"
         label={__('Content', 'd5-tutorial-module-conversion')}
         description={__('Content entered here will appear inside the module.', 'd5-tutorial-module-conversion')}
         sticky={false}
@@ -42,10 +40,10 @@ export const SettingsContent = () => (
         <RichTextContainer />
       </FieldContainer>
     </GroupContainer>
-    <LinkOptions />
-    <Background />
-    <AdminLabel
-      defaultGroupAttr={defaultSettingsAttrs.adminLabel}
+    <LinkGroup />
+    <BackgroundGroup />
+    <AdminLabelGroup
+      defaultGroupAttr={defaultSettingsAttrs?.module?.meta?.adminLabel ?? {}}
     />
   </React.Fragment>
 );

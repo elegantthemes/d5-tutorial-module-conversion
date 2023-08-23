@@ -1,28 +1,19 @@
-import { ModuleContainer } from '@divi/module';
-import { mergeAttrs } from '@divi/module-utils';
-
 import { ModuleStyles } from './module-styles';
 import { ModuleScriptData } from './module-script-data';
 import { moduleClassnames } from './module-classnames';
-import { defaultAttrs } from './constants';
+
+const { ModuleContainer } = window?.divi?.module;
 
 export const StaticModuleEdit = ({
   attrs,
+  elements,
   id,
   name,
 }) => {
-  const moduleAttrs = mergeAttrs({
-    defaultAttrs,
-    attrs,
-  });
-
-  const HeaderLevel = moduleAttrs?.titleFont?.font?.desktop?.value?.headingLevel ?? 'h2';
-  const title = moduleAttrs?.title?.desktop?.value ?? '';
-  const content = moduleAttrs?.content?.desktop?.value ?? '';
-
   return (
     <ModuleContainer
-      attrs={moduleAttrs}
+      attrs={attrs}
+      elements={elements}
       id={id}
       name={name}
       scriptDataComponent={ModuleScriptData}
@@ -30,11 +21,12 @@ export const StaticModuleEdit = ({
       classnamesFunction={moduleClassnames}
     >
       <div className="et_pb_module_inner">
-        <HeaderLevel className="dtmc_static_module_title">{title}</HeaderLevel>
-        <div
-          className="dtmc_static_module_content"
-          dangerouslySetInnerHTML={{__html: content}}
-        />
+        {elements.render({
+          attrName: 'title',
+        })}
+        {elements.render({
+          attrName: 'content',
+        })}
       </div>
     </ModuleContainer>
   );
