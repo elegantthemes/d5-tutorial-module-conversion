@@ -49,6 +49,9 @@ export const DynamicModuleEdit = ({
       stylesComponent={ModuleStyles}
       classnamesFunction={moduleClassnames}
     >
+      {elements.styleComponents({
+        attrName: 'module',
+      })}
       <div>
         {elements.render({
           attrName: 'title',
