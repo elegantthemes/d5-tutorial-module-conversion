@@ -13,13 +13,17 @@ module.exports = {
   // These allows global variable listed below to be imported into the module.
   // @see https://webpack.js.org/configuration/externals/#externals
   externals: {
+
     // Third party dependencies.
-    underscore: '_',
-    react: 'React',
-    'react-dom': 'ReactDOM',
     jquery: 'jQuery',
-    '@wordpress/hooks': ['wp', 'hooks'],
-    '@wordpress/i18n': ['wp', 'i18n'],
+    underscore: '_',
+    lodash: 'lodash',
+    react: ['vendor', 'React'],
+    'react-dom': ['vendor', 'ReactDOM'],
+
+    // WordPress dependencies.
+    '@wordpress/i18n': ['vendor', 'wp', 'i18n'],
+    '@wordpress/hooks': ['vendor', 'wp', 'hooks'],
   },
 
   // This option determine how different types of module within the project will be treated.
@@ -31,6 +35,13 @@ module.exports = {
     // understand JavaScript and JSON files.
     // @see https://webpack.js.org/concepts/#loaders
     rules: [
+      // Handle `.tsx` and `.ts` files.
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+
       // Handle `.jsx` files.
       {
         test: /\.jsx?$/,
@@ -81,7 +92,7 @@ module.exports = {
   resolve: {
     // Allows extension to be leave off when importing.
     // @see https://webpack.js.org/configuration/resolve/#resolveextensions
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'],
   },
 
   // Determine where the created bundles will be outputted.
@@ -89,5 +100,8 @@ module.exports = {
   output: {
     filename: 'd5-tutorial-module-conversion.js',
     path: path.resolve(__dirname, 'build'),
+  },
+  stats: {
+    errorDetails: true,
   },
 };

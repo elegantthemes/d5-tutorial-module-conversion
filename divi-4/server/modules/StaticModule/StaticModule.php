@@ -1,42 +1,13 @@
 <?php
 /**
  * Simple static module that has title and content area
+ * IMPORTANT: Only field and affecting properties are displayed. Other properties and method are removed
  */
 class DTMC_Static_Module extends ET_Builder_Module {
-  // Module slug (also used as shortcode tag)
-  public $slug = 'dtmc_static_module';
-
-  // Visual Builder support (off|partial|on)
-  public $vb_support = 'on';
-
   /**
    * Module properties initialization
    */
   function init() {
-    // Module name
-    $this->name = esc_html__( 'DTMC Static Module', 'd5-tutorial-module-conversion' );
-
-    // Toggle settings
-    $this->settings_modal_toggles = array(
-      'general'  => array(
-        'toggles' => array(
-          'main_content' => esc_html__( 'Text', 'd5-tutorial-module-conversion' ),
-        ),
-      ),
-      'advanced' => array(
-        'toggles' => array(
-          'text'  => array(
-            'title'    => et_builder_i18n( 'Text' ),
-            'priority' => 49,
-          ),
-          'width' => array(
-            'title'    => et_builder_i18n( 'Sizing' ),
-            'priority' => 80,
-          ),
-        ),
-      ),
-    );
-
     $this->advanced_fields = array(
       'fonts'          => array(
         'header' => array(
@@ -113,26 +84,6 @@ class DTMC_Static_Module extends ET_Builder_Module {
         'toggle_slug'     => 'main_content',
       ),
     );
-  }
-
-  /**
-   * Render module output
-   */
-  function render( $attrs, $content = null, $render_slug ) {
-    // Module specific props added on $this->get_fields()
-    $title        = $this->props['title'];
-    $header_level = et_pb_process_header_level( $this->props['header_level'], 'h2' );
-
-    // Render module content
-    $output = sprintf(
-      '<%1$s class="dtmc_static_module_title">%2$s</%1$s>
-        <div class="dtmc_static_module_content">%3$s</div>',
-      $header_level,
-      esc_html( $title ),
-      et_sanitized_previously( $this->content )
-    );
-
-    return $output;
   }
 }
 
