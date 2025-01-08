@@ -18,8 +18,8 @@ module.exports = {
     react: 'React',
     'react-dom': 'ReactDOM',
     jquery: 'jQuery',
-    '@wordpress/hooks': ['wp', 'hooks'],
-    '@wordpress/i18n': ['wp', 'i18n'],
+    '@wordpress/hooks': ['vendor', 'wp', 'hooks'],
+    '@wordpress/i18n': ['vendor', 'wp', 'i18n'],
   },
 
   // This option determine how different types of module within the project will be treated.
