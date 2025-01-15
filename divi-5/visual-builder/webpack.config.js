@@ -15,8 +15,8 @@ module.exports = {
   externals: {
     // Third party dependencies.
     underscore: '_',
-    react: 'React',
-    'react-dom': 'ReactDOM',
+    react: ['vendor', 'React'],
+    'react-dom': ['vendor', 'ReactDOM'],
     jquery: 'jQuery',
     '@wordpress/hooks': ['vendor', 'wp', 'hooks'],
     '@wordpress/i18n': ['vendor', 'wp', 'i18n'],
