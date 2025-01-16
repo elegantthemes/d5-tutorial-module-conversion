@@ -25,6 +25,7 @@ export const SettingsDesign = ({ defaultSettingsAttrs }) => (
       defaultGroupAttr={defaultSettingsAttrs?.module?.advanced?.text}
     />
     <FontGroup
+      attrName="title.decoration.font"
       groupLabel={__('Title Text', 'd5-tutorial-module-conversion')}
       fieldLabel={__('Title', 'd5-tutorial-module-conversion')}
       fields={{
@@ -34,7 +35,9 @@ export const SettingsDesign = ({ defaultSettingsAttrs }) => (
       }}
       defaultGroupAttr={defaultSettingsAttrs?.title?.decoration?.font}
     />
-    <FontBodyGroup />
+    <FontBodyGroup
+      attrName="content.decoration.bodyFont"
+    />
     <SizingGroup />
     <SpacingGroup />
     <BorderGroup />

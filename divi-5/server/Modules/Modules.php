@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 use DTMC\Modules\StaticModule\StaticModule;
 use DTMC\Modules\DynamicModule\DynamicModule;
 
-if ( function_exists('et_core_is_fb_enabled') && et_core_is_fb_enabled() && et_builder_d5_enabled() ) {
   // Register REST routes.
   add_action(
     'init',
@@ -23,7 +22,6 @@ if ( function_exists('et_core_is_fb_enabled') && et_core_is_fb_enabled() && et_b
       $restApi->register_routes();
     }
   );
-}
 
 add_action(
   'divi_module_library_modules_dependency_tree',
