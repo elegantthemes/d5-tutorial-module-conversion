@@ -9,7 +9,7 @@
 namespace DTMC\Modules\DynamicModule;
 
 if ( ! defined( 'ABSPATH' ) ) {
-  die( 'Direct access forbidden.' );
+	die( 'Direct access forbidden.' );
 }
 
 use ET\Builder\Framework\DependencyManagement\Interfaces\DependencyInterface;
@@ -23,25 +23,25 @@ use DTMC\Modules\DynamicModule\DynamicModuleTraits;
  */
 class DynamicModule implements DependencyInterface {
 
-  use DynamicModuleTraits\RenderCallbackTrait;
-  use DynamicModuleTraits\RenderContentTrait;
-  use DynamicModuleTraits\ModuleClassnamesTrait;
-  use DynamicModuleTraits\ModuleStylesTrait;
-  use DynamicModuleTraits\ModuleScriptDataTrait;
+	use DynamicModuleTraits\RenderCallbackTrait;
+	use DynamicModuleTraits\RenderContentTrait;
+	use DynamicModuleTraits\ModuleClassnamesTrait;
+	use DynamicModuleTraits\ModuleStylesTrait;
+	use DynamicModuleTraits\ModuleScriptDataTrait;
 
-  public function load() {
-    $module_json_folder_path = dirname( __DIR__, 3 ) . '/visual-builder/src/modules/dynamic-module';
+	public function load() {
+		$module_json_folder_path = dirname( __DIR__, 3 ) . '/visual-builder/src/modules/dynamic-module';
 
-    add_action(
-      'init',
-      function() use ( $module_json_folder_path ) {
-        ModuleRegistration::register_module(
-          $module_json_folder_path,
-          [
-            'render_callback' => [ $this, 'render_callback' ],
-          ]
-        );
-      }
-    );
-  }
+		add_action(
+			'init',
+			function() use ( $module_json_folder_path ) {
+				ModuleRegistration::register_module(
+					$module_json_folder_path,
+					[
+						'render_callback' => [ $this, 'render_callback' ],
+					]
+				);
+			}
+		);
+	}
 }
