@@ -22,13 +22,15 @@ This repository contains a Divi extension used as an example for the [tutorial o
     ```sh
     cd divi-4/visual-builder
     npm install
-    cd ../../divi-5/visual-builder
+    ```
+    ```sh
+    cd divi-5/visual-builder
     npm install
     ```
 
 3. Install PHP dependencies:
     ```sh
-    cd ../../divi-5
+    cd divi-5
     composer install
     ```
 ## Example Modules
@@ -49,7 +51,7 @@ This plugin have two main folder `divi-4` and `divi-5` each has two example modu
 
 - **Start Development Server for Divi 5:**
     ```sh
-    cd ../../divi-5/visual-builder
+    cd divi-5/visual-builder
     npm run start
     ```
     This command starts the Webpack development server for Divi 5, which watches for changes and rebuilds the project automatically.
@@ -65,7 +67,7 @@ This plugin have two main folder `divi-4` and `divi-5` each has two example modu
 
 - **Build for Production (Divi 5):**
     ```sh
-    cd ../../divi-5/visual-builder
+    cd divi-5/visual-builder
     npm run build
     ```
     This command builds the project for production, optimizing the output for performance.
