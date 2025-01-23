@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
-  die( 'Direct access forbidden.' );
+	die( 'Direct access forbidden.' );
 }
 
 // Setup constants.
@@ -23,8 +23,8 @@ define( 'DTMC_URL', plugin_dir_url( __FILE__ ) );
  * Register Divi Modules
  */
 function dtmc_register_module() {
-  require_once DTMC_PATH . 'divi-4/server/modules/StaticModule/StaticModule.php';
-  require_once DTMC_PATH . 'divi-4/server/modules/DynamicModule/DynamicModule.php';
+	require_once DTMC_PATH . 'divi-4/server/modules/StaticModule/StaticModule.php';
+	require_once DTMC_PATH . 'divi-4/server/modules/DynamicModule/DynamicModule.php';
 }
 add_action( 'et_builder_ready', 'dtmc_register_module' );
 
@@ -32,15 +32,15 @@ add_action( 'et_builder_ready', 'dtmc_register_module' );
  * Enqueue Visual Builder Assets
  */
 function dtmc_enqueue_visual_builder_assets() {
-  if ( et_core_is_fb_enabled() ) {
-    wp_enqueue_script(
-      'dtmc-visual-builder',
-      DTMC_URL . 'divi-4/visual-builder/build/d5-tutorial-module-conversion.js',
-      array( 'react', 'jquery' ),
-      '1.0.0',
-      true
-    );
-  }
+	if ( et_core_is_fb_enabled() ) {
+		wp_enqueue_script(
+			'dtmc-visual-builder',
+			DTMC_URL . 'divi-4/visual-builder/build/d5-tutorial-module-conversion.js',
+			array( 'react', 'jquery' ),
+			'1.0.0',
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'dtmc_enqueue_visual_builder_assets' );
 

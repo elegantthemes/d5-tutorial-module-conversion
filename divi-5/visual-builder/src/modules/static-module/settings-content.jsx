@@ -27,7 +27,9 @@ export const SettingsContent = ({ defaultSettingsAttrs }) => (
         attrName="title.innerContent"
         label={__('Title', 'd5-tutorial-module-conversion')}
         description={__('Text entered here will appear as title.', 'd5-tutorial-module-conversion')}
-        sticky={false}
+        features={{
+          sticky: false,
+        }}
       >
         <TextContainer />
       </FieldContainer>
@@ -35,7 +37,9 @@ export const SettingsContent = ({ defaultSettingsAttrs }) => (
         attrName="content.innerContent"
         label={__('Content', 'd5-tutorial-module-conversion')}
         description={__('Content entered here will appear inside the module.', 'd5-tutorial-module-conversion')}
-        sticky={false}
+        features={{
+          sticky: false,
+        }}
       >
         <RichTextContainer />
       </FieldContainer>
