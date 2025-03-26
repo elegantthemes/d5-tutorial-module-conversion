@@ -1,17 +1,15 @@
-const placeholder = window?.divi?.module?.placeholderContent;
-
 export const placeholderContent = {
   title: {
     innerContent: {
       desktop: {
-        value: placeholder?.title,
+        value: 'Hello, This is Static Module',
       },
     },
   },
   content: {
     innerContent: {
       desktop: {
-        value: placeholder?.body,
+        value: 'You can put any content here. Let say a lorem ipsum perhaps? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
       },
     },
   },

@@ -216,7 +216,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"placeholderContent\": () => (/* binding */ placeholderContent)\n/* harmony export */ });\nconst placeholder = window?.divi?.module?.placeholderContent;\nconst placeholderContent = {\n  title: {\n    innerContent: {\n      desktop: {\n        value: placeholder?.title\n      }\n    }\n  },\n  content: {\n    innerContent: {\n      desktop: {\n        value: placeholder?.body\n      }\n    }\n  }\n};\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./src/modules/static-module/placeholder-content.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"placeholderContent\": () => (/* binding */ placeholderContent)\n/* harmony export */ });\nconst placeholderContent = {\n  title: {\n    innerContent: {\n      desktop: {\n        value: 'Hello, This is Static Module'\n      }\n    }\n  },\n  content: {\n    innerContent: {\n      desktop: {\n        value: 'You can put any content here. Let say a lorem ipsum perhaps? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'\n      }\n    }\n  }\n};\n\n//# sourceURL=webpack://d5-tutorial-module-conversion/./src/modules/static-module/placeholder-content.js?");
 
 /***/ }),
 
