@@ -4,6 +4,20 @@
   "title": "DTMC Static Module",
   "titles": "DTMC Static Modules",
   "category": "module",
+  "videos":           [
+    {
+      "id":   "u3TN2Fp_NlM",
+      "name": "Announcing Divi 5 Dev Alpha!"
+    },
+    {
+      "id":   "u3TN2Fp_NlM",
+      "name": "Design Settings and Advanced Module Settings"
+    },
+    {
+      "id":   "boNZZ0MYU0E",
+      "name": "Saving and loading from the library"
+    }
+  ],
   "attributes": {
     "module": {
       "type": "object",
